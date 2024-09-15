@@ -14,6 +14,14 @@ public class Board {
     initializeBoard();
   }
 
+  public void addPiece(String type) {
+    Piece piece = new Piece(type);
+
+    for (Coordinate coordinate : piece.coordinates) {
+      this.board.get(coordinate.getY()).set(coordinate.getX(), "X");
+    }
+  }
+
   private List<String> getHeaderRowList() {
     List<String> headerRowList = new ArrayList<>(this.width + 1);
 
